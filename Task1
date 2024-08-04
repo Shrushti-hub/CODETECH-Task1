@@ -1,0 +1,76 @@
+/* Develop a simple quiz game that presents multiple-choice questions to the user. The game should keep track of the user's score and provide feedback based on their answers.*/
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// Structure to hold a question and its choices
+struct Question {
+    string questionText;
+    vector<string> choices;
+    char correctAnswer;
+};
+
+// Function prototypes
+void displayQuestion(const Question& q);
+bool checkAnswer(char userAnswer, char correctAnswer);
+void printScore(int score, int totalQuestions);
+
+int main() {
+    // Define a list of questions
+    vector<Question> questions = {
+        {"What is the capital of France?", {"A. Paris", "B. London", "C. Berlin", "D. Madrid"}, 'A'},
+        {"Which planet is known as the Red Planet?", {"A. Earth", "B. Mars", "C. Jupiter", "D. Venus"}, 'B'},
+        {"Who wrote 'To Kill a Mockingbird'?", {"A. Harper Lee", "B. J.K. Rowling", "C. Ernest Hemingway", "D. Mark Twain"}, 'A'},
+        {"What is the largest ocean on Earth?", {"A. Atlantic Ocean", "B. Indian Ocean", "C. Arctic Ocean", "D. Pacific Ocean"}, 'D'}
+    };
+
+    int score = 0;
+    char userAnswer;
+
+    // Iterate over each question
+    for (const auto& q : questions) {
+        displayQuestion(q);
+
+        // Get user input
+        cout << "Enter your answer (A/B/C/D): ";
+        cin >> userAnswer;
+
+        // Check if the answer is correct
+        if (checkAnswer(userAnswer, q.correctAnswer)) {
+            cout << "Correct!" << endl;
+            score++;
+        } else {
+            cout << "Incorrect. The correct answer was " << q.correctAnswer << "." << endl;
+        }
+    }
+
+    // Print the final score
+    printScore(score, questions.size());
+
+    return 0;
+}
+
+// Function to display a question and its choices
+void displayQuestion(const Question& q) {
+    cout << q.questionText << endl;
+    for (const auto& choice : q.choices) {
+        cout << choice << endl;
+    }
+}
+
+// Function to check if the user's answer is correct
+bool checkAnswer(char userAnswer, char correctAnswer) {
+    // Convert userAnswer to uppercase for consistency
+    userAnswer = toupper(userAnswer);
+    return userAnswer == correctAnswer;
+}
+
+// Function to print the final score
+void printScore(int score, int totalQuestions) {
+    cout << "You scored " << score << " out of " << totalQuestions << "!" << endl;
+    double percentage = (static_cast<double>(score) / totalQuestions) * 100;
+    cout << "Your score percentage is " << percentage << "%" << endl;
+}
