@@ -4,8 +4,8 @@ Name - Shrushti Sharma
 Company Name - CODETECH IT SOLUTIONS 
 ID - CT08DS6586
 Domain - C++ Programming Language 
-Duration - 4 Weeks
-Mentor - 
+Duration - August to September 2024
+Mentor - Neela Santosh Kumar
 
 Overview of the Project :
 
