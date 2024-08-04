@@ -1,3 +1,4 @@
+
 # CODETECH-Task1
 
 Name - Shrushti Sharma 
@@ -63,3 +64,7 @@ Technical Insights
 
 1. C++ Standard Library: Utilize C++ standard library functions for input/output, strings, and data structures.
 2. Error Handling: Implement error handling mechanisms for invalid user input and unexpected errors.
+
+
+![Screen Shot 2024-08-04 at 5 00 00 PM](https://github.com/user-attachments/assets/b3537083-d8f5-412f-a1d9-7f6934fa4882)
+
